@@ -14,9 +14,24 @@ const printChar=(currentLetterIndex, wordArray)=>{
     inputOriginal.value=inputOriginal.value.substring(1)
     const spanChar=document.createElement("span");
     resultado.appendChild(spanChar);
-    const charSinCodificar=wordArray[currentLetterIndex];
-    spanChar.innerHTML=alfabeto.includes(charSinCodificar) ? alfabeto[(alfabeto.indexOf(charSinCodificar) + parseInt(rango.value)) % alfabeto.length] : charSinCodificar;
-    printChar(currentLetterIndex + 1, wordArray);
+    animateChar(spanChar)
+        .then( ()=> {
+            const charSinCodificar=wordArray[currentLetterIndex];
+            spanChar.innerHTML=alfabeto.includes(charSinCodificar) ? alfabeto[(alfabeto.indexOf(charSinCodificar)  + parseInt(rango.value)) % alfabeto.length] : charSinCodificar;
+            printChar(currentLetterIndex + 1, wordArray);
+        })
+}
+
+const animateChar=spanChar => {
+    let cambios_letra=0;
+    return new Promise(resolve => {const intervalo = setInterval(() =>{
+        spanChar.innerHTML=alfabeto[Math.floor(Math.random() * alfabeto.length)];
+        cambios_letra++;
+        if(cambios_letra === 3){
+            clearInterval(intervalo);
+            resolve();
+        }
+    }, 50);});
 }
 
 const submit=e=>{
