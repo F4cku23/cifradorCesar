@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cifrador César</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="style.css">
     <script src="archivo_js.js" type="text/javascript" defer></script>
@@ -14,13 +15,23 @@
         <form id="cifrador" autocomplete="off" action="">
             <input type="text" id="input-original" spellcheck="false" placeholder="Ingrese texto" name="text">
         </form>
-        <div id="resultado">
-
-        </div>
+        
         <div class="rango">
             <input type="range" id="rango" value="10" value="10" max="20" oninput="this.nextElementSibling.value=this.value">
             <output>10</output>
         </div>
+
+        <div id="resultado">
+
+        </div>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button id="botonBorrar" class="btn btn-outline-secondary btn-sm" type="button">Reset</button>
+            
+          </div>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
 </html>

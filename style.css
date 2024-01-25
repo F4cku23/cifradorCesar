@@ -37,6 +37,7 @@ h1{
 }
 
 #input-original{
+    height: auto;
     margin: 10px 0 0;
     padding: 10px;
     color: white;
@@ -45,11 +46,12 @@ h1{
 }
 
 #resultado{
-    height: 50px;
+    height: auto;
     color: #285536;
-    padding: 0 10px 10px;
+    padding: 5px 10px 10px;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
+    margin: 1rem 0;
 }
 
 .rango{

@@ -1,8 +1,9 @@
 const alfabeto=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 const inputOriginal=document.getElementById('input-original');
-const cifrador=document.getElementById('cifrador')
-const resultado=document.getElementById('resultado')
-const rango=document.getElementById('rango')
+const cifrador=document.getElementById('cifrador');
+const resultado=document.getElementById('resultado');
+const rango=document.getElementById('rango');
+const botonBorrar = document.getElementById('botonBorrar');
 
 const shifMessage=()=>{
     const wordArray=[...inputOriginal.value.toUpperCase()];
@@ -31,7 +32,7 @@ const animateChar=spanChar => {
             clearInterval(intervalo);
             resolve();
         }
-    }, 50);});
+    }, 30);});
 }
 
 const submit=e=>{
@@ -41,3 +42,8 @@ const submit=e=>{
 }
 
 cifrador.onsubmit=submit;
+
+botonBorrar.addEventListener('click', function() {
+    // Borra el contenido del div
+    resultado.textContent = '';
+  });
